@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "A JSON-based scaffolding tool for Meteor",
   "main": "ignite.js",
+  "preferGlobal": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +24,8 @@
   "dependencies": {
     "minimist": "^1.1.1",
     "touch": "0.0.3"
+  },
+  "bin": {
+    "ignite": "ignite.js"
   }
 }
