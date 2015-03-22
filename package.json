@@ -1,6 +1,6 @@
 {
-  "name": "ignite",
-  "version": "1.0.0",
+  "name": "bc-ignite",
+  "version": "1.0.1",
   "description": "A JSON-based scaffolding tool for Meteor",
   "main": "ignite.js",
   "scripts": {

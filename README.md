@@ -1,5 +1,5 @@
-#Ignite
-##JSON based scaffolding system
+_Ignite_
+__JSON based scaffolding system__
 
     {
       name: "Meteor Scaffold Template",
