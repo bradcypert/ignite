@@ -9,27 +9,38 @@ process.title = 'Ignite';
 
 var args = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
+var touch = require("touch")
 
-function createFile(jsonObject, path){
+var files = [];
+
+function createDirs(jsonObject, path){
   path = (""+path).replace('_files','');
-
   fs.exists(path, function(exists){
     if(exists)
       console.log('path already exists');
     else{
-      fs.mkdirSync(path);
+      try{
+        fs.mkdirSync(path);
+      }catch(e){
+        //Add appropriate error handling.
+      }
     }
   });
 
-
   for(var attributename in jsonObject){
     if(typeof jsonObject[attributename] == "object"){
-
-      createFile(jsonObject[attributename], path+"/"+attributename);
+      createDirs(jsonObject[attributename], path+"/"+attributename);
     }
     else{
-      //console.log("\t"+jsonObject[attributename]);
+      fullPath = path+jsonObject[attributename];
+      files.push(fullPath);
     }
+  }
+}
+
+function createFiles(){
+  for(var path in files){
+    fs.writeFile(files[path], '');
   }
 }
 
@@ -43,5 +54,6 @@ if(args.help){
   templateObject = JSON.parse(fs.readFileSync('templates/'+templateName+'.json', 'utf8'));
   //do the things here
   //recursively create folder structure
-  createFile(templateObject.structure, process.cwd());
+  createDirs(templateObject.structure, process.cwd());
+  setTimeout(createFiles(), 1000);
 }

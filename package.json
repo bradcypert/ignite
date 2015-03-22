@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bradcypert/ignite",
   "dependencies": {
-    "minimist": "^1.1.1"
+    "minimist": "^1.1.1",
+    "touch": "0.0.3"
   }
 }
