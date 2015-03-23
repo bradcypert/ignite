@@ -51,9 +51,9 @@ if(args.help){
               );
 } else if (args._[0] == "scaffold" && args._[1]) {
   templateName = args._[1];
-  templateObject = JSON.parse(fs.readFileSync('templates/'+templateName+'.json', 'utf8'));
+  templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
   //do the things here
   //recursively create folder structure
   createDirs(templateObject.structure, process.cwd());
-  setTimeout(createFiles(), 1000);
+  setTimeout(createFiles(), 2500);
 }
