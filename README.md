@@ -2,6 +2,9 @@ Ignite
 ======
 JSON based scaffolding system
 _____________________________
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] 
+
+
 
 ###Installation
     npm install -g bc-ignite
@@ -36,3 +39,7 @@ instead of...
     ignite scaffold rails-angular
 
 This allows you to scaffold only the pieces you need and hopefully will give you a solution more specific to your actual needs, instead of installing all the junk someone else thought they needed when they created the generator.
+
+[downloads-image]: http://img.shields.io/npm/dm/bc-ignite.svg
+[npm-url]: http://www.npmjs.com/package/bc-ignite
+[npm-image]: http://img.shields.io/npm/v/bc-ignite.svg
