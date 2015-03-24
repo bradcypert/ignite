@@ -1,0 +1,17 @@
+{
+  "name": "Standardized Express Template",
+  "desc": "",
+  "structure": {
+    "public":{
+      "stylesheets":{
+        "_files":["main.css"]
+      }
+    },
+    "routes":{},
+    "views":{
+      "_files": ["index.jade"]
+    },
+    "tests":{},
+    "_files": ["app.js"]
+  }
+}
