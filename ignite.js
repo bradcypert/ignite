@@ -52,7 +52,10 @@ if(args.help){
               "\n\nTo scaffold a new project:",
               "\n\tignite scaffold"
               );
-} else if (args._[0] == "scaffold" && args._[1]) {
+}else if (args.version){
+  var pjson = require('./package.json');
+  console.log("Ignite Verison:", pjson.version);
+}else if (args._[0] == "scaffold" && args._[1]) {
   var templateName = args._[1];
   try{
     templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
