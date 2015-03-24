@@ -30,6 +30,24 @@ var logError = function(code, message){
   console.log("Error Code - "+code+": "+message);
 }
 
+var printHelp = function(){
+  console.log("Usage: \tignite [options] [arguments]",
+              "\n\nTo scaffold a new project:",
+              "\n\tignite scaffold [arguements]",
+              "\n\nOptions:",
+              "\n\t--version\tprints the script's version"
+              );
+}
+
+var describe = function(templateName){
+  try{
+    templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
+    console.log(templateObject.name, ":", templateObject.desc);
+  } catch (e) {
+    logError(1, "Unable to load File: "+ templateName+"!");
+  }
+}
+
 var createStructure = function(files, cb){
   for(var file in files){
     if(!(/(\.\w+$)/ig.test(files[file])))
@@ -55,16 +73,12 @@ var createFiles = function(files){
 }
 
 if(args.help){
-  console.log("Usage: \tignite [options] [arguments]",
-              "\n\nTo scaffold a new project:",
-              "\n\tignite scaffold [arguements]",
-              "\n\nOptions:",
-              "\n\t--version\tprints the script's version"
-              );
-}else if (args.version){
-  var pjson = require('./package.json');
-  console.log("Ignite Verison:", pjson.version);
-}else if (args._[0] == "scaffold" && args._[1]) {
+  printHelp();
+}
+else if (args.version){
+  console.log("Ignite Verison:", require('./package.json').version);
+}
+else if (args._[0] == "scaffold" && args._[1]) {
   var templateName = args._[1];
   try{
     templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
@@ -73,6 +87,16 @@ if(args.help){
   } catch (e){
     logError(1, "Unable to load File: "+ templateName+"!");
   }
+}
+else if(args._[0] == "list"){
+  files = fs.readdirSync(__dirname+"/templates");
+  console.log("Available Ignite Templates:");
+  for(file in files){
+    console.log("",files[file].replace(".json", ""));
+  }
+}
+else if(args._[0] == "describe" && args._[1]){
+  describe(args._[1]);
 }
 else{
   console.log("Incorrect usage: Try ignite --help for more information on how to use this tool.");

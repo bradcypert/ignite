@@ -9,6 +9,12 @@ _____________________________
 ###Igniting your Project
     ignite scaffold {template-name}
 
+###Listing Install Templates
+    ignite list
+
+###Describing templates
+    ignite describe {template-name}
+
 ###Current Templates
 #####Meteor - Standardized Meteor Application Template
 #####React - A Flux-Based template for building React Applications
