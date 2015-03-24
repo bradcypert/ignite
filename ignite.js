@@ -9,38 +9,41 @@ process.title = 'Ignite';
 
 var args = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
-var touch = require("touch")
+var mkdirp = require("mkdirp")
+var getDirName = require("path").dirname
 
 var files = [];
 
-function createDirs(jsonObject, path){
+var getFilePaths = function(jsonObject, path){
   path = (""+path).replace('_files','');
-  fs.exists(path, function(exists){
-    if(exists)
-      console.log('path already exists');
-    else{
-      try{
-        fs.mkdirSync(path);
-      }catch(e){
-        //Add appropriate error handling.
-      }
-    }
-  });
-
   for(var attributename in jsonObject){
     if(typeof jsonObject[attributename] == "object"){
-      createDirs(jsonObject[attributename], path+"/"+attributename);
-    }
-    else{
-      fullPath = path+jsonObject[attributename];
-      files.push(fullPath);
+      attributename === "_files"? null : files.push(path+"/"+attributename);
+      getFilePaths(jsonObject[attributename], path+"/"+attributename);
+    }else{
+      files.push(path+jsonObject[attributename]);
     }
   }
 }
 
-function createFiles(){
-  for(var path in files){
-    fs.writeFile(files[path], '');
+var logError = function(code, message){
+  console.log("Error Code - "+code+": "+message);
+}
+
+var createStructure = function(files){
+  for(var file in files){
+    mkdirp(getDirName(files[file]), function (err) {
+      if (err)
+        logError(2, "Directory Already Exists!");
+    });
+  }
+}
+
+var createFiles = function(files){
+  for(var file in files){
+    if(/(\.\w+$)/ig.test(files[file])){
+      fs.writeFile(files[file],'');
+    }
   }
 }
 
@@ -50,10 +53,13 @@ if(args.help){
               "\n\tignite scaffold"
               );
 } else if (args._[0] == "scaffold" && args._[1]) {
-  templateName = args._[1];
-  templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
-  //do the things here
-  //recursively create folder structure
-  createDirs(templateObject.structure, process.cwd());
-  setTimeout(createFiles(), 2500);
+  var templateName = args._[1];
+  try{
+    templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
+    getFilePaths(templateObject.structure, process.cwd());
+    createStructure(files);
+    createFiles(files);
+  } catch (e){
+    logError(1, "Unable to load File: "+ templateName+"!");
+  }
 }
