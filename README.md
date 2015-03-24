@@ -25,6 +25,7 @@ The plan for Ignite is simple. I want a solution that doesn't scaffold a project
     ignite scaffold angular
 
 instead of...
+
     ignite scaffold rails-angular
 
 This allows you to scaffold only the pieces you need and hopefully will give you a solution more specific to your actual needs, instead of installing all the junk someone else thought they needed when they created the generator.
