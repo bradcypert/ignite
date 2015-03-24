@@ -30,19 +30,26 @@ var logError = function(code, message){
   console.log("Error Code - "+code+": "+message);
 }
 
-var createStructure = function(files){
+var createStructure = function(files, cb){
   for(var file in files){
-    mkdirp(getDirName(files[file]), function (err) {
+    if(!(/(\.\w+$)/ig.test(files[file])))
+    mkdirp(files[file], function (err) {
       if (err)
         logError(2, "Directory Already Exists!");
     });
   }
+  cb(files);
 }
 
 var createFiles = function(files){
   for(var file in files){
     if(/(\.\w+$)/ig.test(files[file])){
-      fs.writeFile(files[file],'');
+      fs.writeFile(files[file],'', function(err){
+        if(err){
+          //If at first you don't succeed, try, try again.
+          fs.writeFile(files[file],'');
+        }
+      });
     }
   }
 }
@@ -50,7 +57,9 @@ var createFiles = function(files){
 if(args.help){
   console.log("Usage: \tignite [options] [arguments]",
               "\n\nTo scaffold a new project:",
-              "\n\tignite scaffold"
+              "\n\tignite scaffold [arguements]",
+              "\n\nOptions:",
+              "\n\t--version\tprints the script's version"
               );
 }else if (args.version){
   var pjson = require('./package.json');
@@ -60,9 +69,11 @@ if(args.help){
   try{
     templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
     getFilePaths(templateObject.structure, process.cwd());
-    createStructure(files);
-    createFiles(files);
+    createStructure(files, createFiles);
   } catch (e){
     logError(1, "Unable to load File: "+ templateName+"!");
   }
+}
+else{
+  console.log("Incorrect usage: Try ignite --help for more information on how to use this tool.");
 }
