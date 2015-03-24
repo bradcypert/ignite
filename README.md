@@ -11,6 +11,7 @@ _____________________________
 
 ###Current Templates
 #####Meteor - Standardized Meteor Application Template
+#####React - A Flux-Based template for building React Applications
 
 ###Want to Contribute a Template?
 Just fork the repo, add one, and submit a pull request.

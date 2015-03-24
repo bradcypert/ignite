@@ -1,0 +1,12 @@
+{
+  "name": "Flux-based React Template",
+  "desc": "More Info: http://facebook.github.io/flux/docs/",
+  "structure": {
+    "actions":{},
+    "components":{},
+    "constants":{},
+    "dispatcher":{},
+    "stores":{},
+    "_files": ["app.js", "bundle.js"]
+  }
+}
