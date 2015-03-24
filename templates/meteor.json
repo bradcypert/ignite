@@ -28,7 +28,6 @@
       "_files": ["main.js", "main.html"]
     },
     "lib": {
-      "collections": {},
       "_files": ["router.js"]
     },
     "public": {
