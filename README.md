@@ -25,8 +25,9 @@ _____________________________
     ignite describe {template-name}
 
 ###Current Templates
-#####Meteor - Standardized Meteor Application Template
-#####React - A Flux-Based template for building React Applications
+#####meteor - Standardized Meteor Application Template
+#####react - A Flux-Based template for building React Applications
+#####express - A seed structure for building robust express apps
 
 ###Want to Contribute a Template?
 Just fork the repo, add one, and submit a pull request.
