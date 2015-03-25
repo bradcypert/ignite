@@ -4,6 +4,8 @@
 
 Ignite
 ======
+
+[![Join the chat at https://gitter.im/bradcypert/ignite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bradcypert/ignite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 JSON based scaffolding system
 _____________________________
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] 
