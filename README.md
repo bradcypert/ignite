@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="250" width="" src="https://cloud.githubusercontent.com/assets/1455979/6810939/5fdf4716-d232-11e4-850a-67399c70d29e.png">
+  </a>
+</p>
+
 Ignite
 ======
 JSON based scaffolding system
