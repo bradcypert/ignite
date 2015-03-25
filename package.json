@@ -1,6 +1,6 @@
 {
   "name": "bc-ignite",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A JSON-based scaffolding tool that favors structure over full-fledged integration.",
   "main": "ignite.js",
   "preferGlobal": true,
