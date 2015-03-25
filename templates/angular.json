@@ -1,0 +1,20 @@
+{
+  "name": "AngularJS Scaffold Template",
+  "desc": "Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)",
+  "prompts":[
+    {"name": "Please Input Project Name..."}
+  ],
+  "structure": {
+    "app":{
+      "css": {
+        "_files": ["app.css"]
+      },
+      "images": {},
+      "_files": ["app.js", "routes.js", "index.html", "home.html"]
+    },
+    "test": {
+      "_files": ["karma.conf.js", "module-spec.js"]
+    },
+    "_files": ["README.md", ".gitignore"]
+  }
+}
