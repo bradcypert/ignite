@@ -10,6 +10,10 @@ _____________________________
 
 [![Join the chat at https://gitter.im/bradcypert/ignite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bradcypert/ignite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+<a href="https://trello.com/b/YdN3XhFs/ignite">
+    <img src="https://img.shields.io/badge/Roadmap-Trello-blue.svg">
+</a>
+
 
 
 ###Installation
