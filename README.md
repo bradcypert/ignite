@@ -29,9 +29,10 @@ _____________________________
     ignite describe {template-name}
 
 ###Current Templates
+#####angular - Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)
+#####express - A seed structure for building robust express apps
 #####meteor - Standardized Meteor Application Template
 #####react - A Flux-Based template for building React Applications
-#####express - A seed structure for building robust express apps
 
 ###Want to Contribute a Template?
 Just fork the repo, add one, and submit a pull request.
