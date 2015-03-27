@@ -31,6 +31,7 @@ _____________________________
 ###Current Templates
 #####angular - Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)
 #####express - A seed structure for building robust express apps
+#####marionette - A folder structure for use with Marionette and Backbone.js, creates scripts directory.
 #####meteor - Standardized Meteor Application Template
 #####react - A Flux-Based template for building React Applications
 
