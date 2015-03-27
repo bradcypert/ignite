@@ -1,0 +1,29 @@
+{
+  "name": "Marionette",
+  "desc": "A folder structure for use with Marionette and Backbone.js, creates scripts directory.",
+  "structure": {
+    "scripts":{
+      "backbone":{
+        "apps":{},
+        "collections":{},
+        "controllers":{},
+        "layouts":{
+          "screens":{},
+          "modules":{}
+        },
+        "models":{},
+        "modules":{},
+        "routers":{},
+        "views":{
+          "screens":{},
+          "modules":{}
+        }
+      },
+      "built":{},
+      "classes":{},
+      "tests":{},
+      "vendor":{},
+      "_files":["main.js"]
+    }
+  }
+}
