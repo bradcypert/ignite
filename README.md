@@ -63,7 +63,7 @@ Simply create the template in a directory
 
     touch /path/to/my/templates/rails.json
 
-Edit the JSON so appropriately, and then run
+Create the JSON appropriately, and then run
 
     ignite scaffold rails -d /path/to/my/templates/
 
