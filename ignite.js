@@ -81,7 +81,10 @@ else if (args.version){
 else if (args._[0] == "scaffold" && args._[1]) {
   var templateName = args._[1];
   try{
-    templateObject = JSON.parse(fs.readFileSync(__dirname+'/templates/'+templateName+'.json', 'utf8'));
+    folderName = __dirname+'/templates/';
+    if(args.d)
+      folderName = args.d;
+    templateObject = JSON.parse(fs.readFileSync(folderName+templateName+'.json', 'utf8'));
     getFilePaths(templateObject.structure, process.cwd());
     createStructure(files, createFiles);
   } catch (e){

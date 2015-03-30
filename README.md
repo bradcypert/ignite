@@ -6,7 +6,7 @@ Ignite
 ======
 JSON based scaffolding system
 _____________________________
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 [![Join the chat at https://gitter.im/bradcypert/ignite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bradcypert/ignite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -27,6 +27,17 @@ _____________________________
 
 ###Describing templates
     ignite describe {template-name}
+
+###Using custom templates
+Ignite can be used with user-created templates as well. All you have to do is specify a folder on your file system and use the -d flag when calling the command.
+
+Simply create the template in a directory
+
+    touch /path/to/my/templates/rails.json
+
+Edit the JSON so appropriately, and then run
+
+    ignite scaffold rails -d /path/to/my/templates/
 
 ###Current Templates
 #####angular - Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)
