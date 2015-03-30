@@ -84,11 +84,14 @@ else if (args._[0] == "scaffold" && args._[1]) {
     folderName = __dirname+'/templates/';
     if(args.d)
       folderName = args.d;
+    if(!folderName.substr(folderName.length-1, 1) == "/")
+      folderName+="/";
+
     templateObject = JSON.parse(fs.readFileSync(folderName+templateName+'.json', 'utf8'));
     getFilePaths(templateObject.structure, process.cwd());
     createStructure(files, createFiles);
   } catch (e){
-    logError(1, "Unable to load File: "+ templateName+"!");
+    logError(1, "Unable to load File at: " +folderName+templateName+" !");
   }
 }
 else if(args._[0] == "list"){
