@@ -11,6 +11,8 @@ var args = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
 var mkdirp = require("mkdirp")
 var getDirName = require("path").dirname
+var updateNotifier = require('update-notifier');
+var pkg = require('./package.json');
 
 var files = [];
 
@@ -72,11 +74,13 @@ var createFiles = function(files){
   }
 }
 
+updateNotifier({pkg: pkg}).notify();
+
 if(args.help){
   printHelp();
 }
 else if (args.version){
-  console.log("Ignite Verison:", require('./package.json').version);
+  console.log("Ignite Verison:", pkg.version);
 }
 else if (args._[0] == "scaffold" && args._[1]) {
   var templateName = args._[1];
