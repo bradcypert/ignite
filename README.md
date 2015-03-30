@@ -28,16 +28,7 @@ _____________________________
 ###Describing templates
     ignite describe {template-name}
 
-###Using custom templates
-Ignite can be used with user-created templates as well. All you have to do is specify a folder on your file system and use the -d flag when calling the command.
-
-Simply create the template in a directory
-
-    touch /path/to/my/templates/rails.json
-
-Edit the JSON so appropriately, and then run
-
-    ignite scaffold rails -d /path/to/my/templates/
+###Advanced usage can be found below
 
 ###Current Templates
 #####angular - Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)
@@ -63,6 +54,19 @@ instead of...
     ignite scaffold rails-angular
 
 This allows you to scaffold only the pieces you need and hopefully will give you a solution more specific to your actual needs, instead of installing all the junk someone else thought they needed when they created the generator.
+
+##Advanced Usage
+###Using custom templates
+Ignite can be used with user-created templates as well. All you have to do is specify a folder on your file system and use the -d flag when calling the command.
+
+Simply create the template in a directory
+
+    touch /path/to/my/templates/rails.json
+
+Edit the JSON so appropriately, and then run
+
+    ignite scaffold rails -d /path/to/my/templates/
+
 
 [downloads-image]: http://img.shields.io/npm/dm/bc-ignite.svg
 [npm-url]: http://www.npmjs.com/package/bc-ignite
