@@ -9,8 +9,8 @@ process.title = 'Ignite';
 
 var args = require('minimist')(process.argv.slice(2));
 var fs = require('fs');
-var mkdirp = require("mkdirp")
-var getDirName = require("path").dirname
+var mkdirp = require("mkdirp");
+var getDirName = require("path").dirname;
 var updateNotifier = require('update-notifier');
 var pkg = require('./package.json');
 
