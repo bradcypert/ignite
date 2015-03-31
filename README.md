@@ -6,7 +6,7 @@ Ignite
 ======
 JSON based scaffolding system
 _____________________________
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 [![Join the chat at https://gitter.im/bradcypert/ignite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bradcypert/ignite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -67,7 +67,8 @@ Create the JSON appropriately, and then run
 
     ignite scaffold rails -d /path/to/my/templates/
 
-
+[travis-image]: https://travis-ci.org/bradcypert/ignite.svg?branch=master
+[travis-url]: https://travis-ci.org/bradcypert/ignite
 [downloads-image]: http://img.shields.io/npm/dm/bc-ignite.svg
 [npm-url]: http://www.npmjs.com/package/bc-ignite
 [npm-image]: http://img.shields.io/npm/v/bc-ignite.svg
