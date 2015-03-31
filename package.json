@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/bradcypert/ignite.git"
   },
+   "contributors": [
+    { "name": "Brad Cypert", "email": "brad.cypert@gmail.com" },
+    { "name": "Austin Turnage", "email": "austin@datarats.com" }
+  ],
   "keywords": [
     "scaffolding",
     "meteor",
