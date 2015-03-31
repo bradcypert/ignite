@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env ./node_modules/babel/bin/babel-node
 
 import minimist from 'minimist';
 import fs from 'fs';
