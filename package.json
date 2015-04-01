@@ -1,17 +1,18 @@
 {
   "name": "bc-ignite",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "A JSON-based scaffolding tool that favors structure over full-fledged integration.",
   "main": "ignite.js",
   "preferGlobal": true,
   "scripts": {
+    "clean": "rm -r dist/*",
+    "prebuild":"./node_modules/.bin/gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bradcypert/ignite.git"
   },
-
   "keywords": [
     "scaffolding",
     "meteor",
@@ -24,8 +25,14 @@
   ],
   "author": "brad.cypert@gmail.com",
   "contributors": [
-    { "name": "Brad Cypert", "email": "brad.cypert@gmail.com" },
-    { "name": "Austin Turnage", "email": "austin@datarats.com" }
+    {
+      "name": "Brad Cypert",
+      "email": "brad.cypert@gmail.com"
+    },
+    {
+      "name": "Austin Turnage",
+      "email": "austin@datarats.com"
+    }
   ],
   "license": "MIT",
   "bugs": {
@@ -38,17 +45,13 @@
     "update-notifier": "^0.3.1"
   },
   "bin": {
-    "ignite": "ignite.js"
+    "ignite": "dist/ignite.js"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-concat":"*",
-    "gulp-rename":"*",
-    "gulp-sourcemaps":"*",
-    "browserify":"*",
-    "babelify":"*",
-    "through2":"*",
-    "gulp-stylus":"*",
-    "nib":"*"
+    "gulp-babel": "^4.0.1",
+    "gulp-concat": "*",
+    "gulp-insert":"*"
+
   }
 }
