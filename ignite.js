@@ -35,7 +35,6 @@ switch(args._[0]) {
     console.log("Ignite Verison:", pkg.version);
     break;
   default:
-    console.log("Incorrect usage: Try ignite --help for more information on how to use this tool.");
+    console.log("Incorrect usage: Try ignite help for more information on how to use this tool.");
     break;
 };
-
