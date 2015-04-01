@@ -11,6 +11,7 @@
     "type": "git",
     "url": "https://github.com/bradcypert/ignite.git"
   },
+
   "keywords": [
     "scaffolding",
     "meteor",
@@ -22,6 +23,10 @@
     "templating"
   ],
   "author": "brad.cypert@gmail.com",
+  "contributors": [
+    { "name": "Brad Cypert", "email": "brad.cypert@gmail.com" },
+    { "name": "Austin Turnage", "email": "austin@datarats.com" }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bradcypert/ignite/issues"
@@ -33,7 +38,7 @@
     "update-notifier": "^0.3.1"
   },
   "bin": {
-    "ignite": "./node_modules/babel/bin/babel-node ignite.js"
+    "ignite": "ignite.js"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
