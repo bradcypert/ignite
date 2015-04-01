@@ -8,6 +8,8 @@ import updateNotifier from 'update-notifier';
 import pkg from './package.json';
 import {logError, printHelp, describe, listTemplates} from './lib/utils'
 import {getFilePaths, createStructure, createFiles, scaffold} from './lib/fileHelpers'
+import {getApi} from './lib/apiUtils'
+
 
 process.title = 'Ignite';
 
@@ -37,7 +39,12 @@ switch(args._[0]) {
   case "verison":
     console.log("Ignite Verison:", pkg.version);
     break;
+  case "pull":
+    console.log('Getting some JSON content');
+    getApi(args._[1], args._[2])
+    break;
   default:
     console.log("Incorrect usage: Try ignite help for more information on how to use this tool.");
     break;
 };
+
