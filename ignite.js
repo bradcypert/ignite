@@ -16,17 +16,20 @@ var getDirName = path.dirname;
 
 updateNotifier({pkg: pkg}).notify();
 
+/**
+ * CLI Parser
+ */
 switch(args._[0]) {
   case "scaffold":
     if(!args._[1]) logError(3, 'Missing arguments');
     else scaffold(args._[1], args.d);
     break;
   case "list":
-    listTemplates();
+    listTemplates(args.d);
     break;
   case "describe":
     if(!args._[1]) logError(3, 'Missing arguments');
-    else describe(args._[1]);
+    else describe(args._[1], args.d);
     break;
   case "help":
     printHelp();
@@ -35,7 +38,7 @@ switch(args._[0]) {
     console.log("Ignite Verison:", pkg.version);
     break;
   default:
-    console.log("Incorrect usage: Try ignite --help for more information on how to use this tool.");
+    console.log("Incorrect usage: Try ignite help for more information on how to use this tool.");
     break;
 };
 
