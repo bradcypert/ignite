@@ -67,6 +67,10 @@ Create the JSON appropriately, and then run
 
     ignite scaffold rails -d /path/to/my/templates/
 
+You can also create a environment variable
+
+    export IGNITE_DIR=/path/to/my/templates/
+
 
 [downloads-image]: http://img.shields.io/npm/dm/bc-ignite.svg
 [npm-url]: http://www.npmjs.com/package/bc-ignite
