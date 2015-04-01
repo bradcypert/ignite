@@ -16,17 +16,20 @@ var getDirName = path.dirname;
 
 updateNotifier({pkg: pkg}).notify();
 
+/**
+ * CLI Parser
+ */
 switch(args._[0]) {
   case "scaffold":
     if(!args._[1]) logError(3, 'Missing arguments');
     else scaffold(args._[1], args.d);
     break;
   case "list":
-    listTemplates();
+    listTemplates(args.d);
     break;
   case "describe":
     if(!args._[1]) logError(3, 'Missing arguments');
-    else describe(args._[1]);
+    else describe(args._[1], args.d);
     break;
   case "help":
     printHelp();
