@@ -1,6 +1,6 @@
 {
   "name": "Standardized Express Template",
-  "desc": "",
+  "desc": "A folder structure for use with Jade & Express.js",
   "structure": {
     "public":{
       "stylesheets":{
@@ -9,9 +9,9 @@
     },
     "routes":{},
     "views":{
-      "_files": ["index.jade"]
+      "_files": ["index.jade", "layout.jade"]
     },
     "tests":{},
-    "_files": ["app.js"]
+    "_files": ["app.js", ".gitignore", "package.json", ".editorconfig"]
   }
 }
