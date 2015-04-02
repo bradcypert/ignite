@@ -7,6 +7,6 @@
     "constants":{},
     "dispatcher":{},
     "stores":{},
-    "_files": ["app.js", "bundle.js"]
+    "_files": ["app.js", "bundle.js", ".gitignore", ".editorconfig"]
   }
 }

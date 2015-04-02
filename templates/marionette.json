@@ -23,7 +23,7 @@
       "classes":{},
       "tests":{},
       "vendor":{},
-      "_files":["main.js"]
+      "_files":["main.js", ".gitignore", "package.json", ".editorconfig"]
     }
   }
 }
