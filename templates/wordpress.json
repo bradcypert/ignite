@@ -1,0 +1,40 @@
+{
+  "name": "Standardized WordPress template scaffold",
+  "desc": "A folder structure for creating wordPress Templates",
+  "structure": {
+      "assets":{},
+      "tests":{},
+      "languages":{},
+      "lib":{},
+      "templates":{},
+      "_files": [
+        ".bowerrc",
+        ".gitignore",
+        ".jshintrc",
+        "404.php",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "Gruntfile.js",
+        "gulpfile.js",
+        "README.md",
+        "archive.php",
+        "comments.php",
+        "content-none.php",
+        "content-page.php",
+        "content-search.php",
+        "content-single.php",
+        "content.php",
+        "footer.php",
+        "front-page.php",
+        "functions.php",
+        "header.php",
+        "index.php",
+        "package.json",
+        "page.php",
+        "screenshot.png",
+        "search.php",
+        "sidebar.php",
+        "single.php"
+      ]
+  }
+}

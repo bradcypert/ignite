@@ -1,0 +1,40 @@
+{
+  "name": "Standardized Joomla template scaffold",
+  "desc": "A folder structure for creating Joomla Templates",
+  "structure": {
+      "assets":{
+          "css":{
+            "_files":"style.css",
+          },
+          "fonts":{},
+          "img":{},
+          "js":{
+            "_files":"app.js"
+          },
+          "images":{}
+      },
+      "html":{},
+      "tests":{},
+      "languages":{},
+      "lib":{},
+      "templates":{},
+      "_files": [
+        "package.json",
+        "screenshot.png",
+        "error.php",
+        "favicon.ico",
+        "index.php",
+        "templateDetails.xml",
+        "template_preview.png",
+        "template_thumbnail.png",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintrc",
+        "Gruntfile.js",
+        "gulpfile.js",
+        "README.md"
+      ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Standardized Node.js & io.js module scaffold",
+  "desc": "A folder structure for creating Node.js & io.js modules",
+  "structure": {
+     "test":{
+        "_files": [
+          "test.js"
+        ]
+      },
+      "lib":{},
+      "_files": [
+        "index.js",
+        ".gitignore",
+        "package.json",
+        ".editorconfig",
+        ".jshintrc",
+        "README.md",
+        ".travis.yml",
+        ".gitattributes",
+        ".npmignore",
+        " binding.gyp",
+        "index.cc",
+        "index.h",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        ".bowerrc",
+        "Gruntfile.js",
+        "gulpfile.js"
+      ]
+  }
+}

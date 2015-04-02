@@ -1,0 +1,27 @@
+{
+  "name": "Standardized Drupal 7 template scaffold",
+  "desc": "A folder structure for creating Drupal 7 Templates",
+  "structure": {
+      "assets":{},
+      "tests":{},
+      "languages":{},
+      "lib":{},
+      "templates":{},
+      "_files": [
+        ".gitignore",
+        ".jshintrc",
+        "Gruntfile.js",
+        "gulpfile.js",
+        "README.md",
+        "package.json",
+        "screenshot.png",
+        "startertheme.info",
+        "template.php",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintrc"
+      ]
+  }
+}

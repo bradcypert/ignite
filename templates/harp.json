@@ -1,0 +1,31 @@
+{
+  "name": "Harp Preprecessor Template",
+  "desc": "More Info: http://harpjs.com",
+  "structure": {
+    "assets":{
+        "css":{
+          "_files":"style.css",
+        },
+        "fonts":{},
+        "img":{},
+        "js":{
+          "_files":"app.js"
+        },
+        "images":{}
+    },
+    "_files": [
+      "404.jade",
+      "index.jade",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "_layout.jade",
+      "_data.json",
+      ".bowerrc",
+      ".gitignore",
+      ".jshintrc"
+      ]
+  }
+}
+
+
+
