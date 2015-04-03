@@ -1,0 +1,22 @@
+{
+  "name": "A Sublime Text Package Scaffold",
+  "desc": "Scaffold for Sublime text packages",
+  "structure": {
+    "snippets":{
+      "_files":["application.sublime-snippet"]
+    },
+    "app":{
+      "_files":["Context.sublime-menu", "Default (Linux).sublime-keymap", " Default (OSX).sublime-keymap", "Default (Windows).sublime-keymap", "application.py"]
+    },
+    "_files": [
+      ".gitignore",
+      ".editorconfig",
+      ".jshintrc",
+      "README.md",
+      ".travis.yml",
+      ".gitattributes",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "A NW.js scaffold",
+  "desc": "Scaffold for NW.js applications",
+  "structure": {
+    "lib":{},
+    "assets":{},
+    "app":{
+      "assets":{
+        "css":{
+          "_files":"style.css",
+        },
+        "fonts":{},
+        "img":{},
+        "js":{
+          "_files":"app.js"
+        },
+        "images":{}
+      },
+      "_files":["app.js", "index.html", "package.json", ""]
+    },
+    "tests":{
+      "_files":"test.js"
+    },
+    "_files": [
+      ".gitignore",
+      "package.json",
+      ".editorconfig",
+      ".jshintrc",
+      "README.md",
+      ".travis.yml",
+      ".gitattributes",
+      ".npmignore",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      ".bowerrc",
+      "Gruntfile.js",
+      "gulpfile.js"
+    ]
+  }
+}

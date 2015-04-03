@@ -1,0 +1,32 @@
+{
+  "name": "Atom.io Package Scaffold",
+  "desc": "Scaffold for Atom.io packages",
+  "structure": {
+  "keymaps":{
+    "_files":["app.cson"]
+  },
+  "lib":{
+    "_files":["app.coffee", "app-view.coffee"]
+  },
+  "menus":{
+    "_files":["app.cson"]
+  },
+  "spec":{
+    "_files":["app-spec.coffee", "app-view-spec.coffee"]
+  },
+  "stylesheets":{
+    "_files":['app.less']
+  },
+    "_files": [
+      ".gitignore",
+      ".editorconfig",
+      "README.md",
+      ".gitattributes",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "package.json"
+    ]
+  }
+}
+
+

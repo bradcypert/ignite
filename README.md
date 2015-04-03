@@ -49,7 +49,13 @@ _____________________________
 
 * **joomla** - Joomla Template folder & file structure
 
-* **harp** - Harp.js scaffold folder & file structure
+* **harp** - Harp.js folder & file structure scaffold
+
+* **nwjs** - NW.js application folder & file structure scaffold
+
+* **sublime** - Sublime Text scaffold for creating snippets and packages
+
+* **atom** - Atom.io scaffold for creating packages in CSON and coffeescript.
 
 ###Want to Contribute a Template?
 Just fork the repo, add one, and submit a pull request.
