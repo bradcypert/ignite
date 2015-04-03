@@ -13,6 +13,7 @@ var mkdirp = require("mkdirp");
 var getDirName = require("path").dirname;
 var updateNotifier = require('update-notifier');
 var pkg = require('./package.json');
+var colors = require('colors');
 
 var files = [];
 
@@ -29,13 +30,13 @@ var getFilePaths = function(jsonObject, path){
 };
 
 var logError = function(code, message){
-  console.log("Error Code - "+code+": "+message);
+  console.log(("Error Code - "+code).red+": "+message);
 };
 
 var printHelp = function(){
-  console.log("Usage: \tignite [options] [arguments]",
+  console.log("Usage: \tignite [options] [arguments]".yellow,
               "\n\nTo scaffold a new project:",
-              "\n\tignite scaffold [arguements]",
+              "\n\tignite scaffold [arguements] [templateName]",
               "\n\nOptions:",
               "\n\t--version\tprints the script's version"
               );
@@ -76,13 +77,15 @@ var createFiles = function(files){
   }
 };
 
+console.log("Ignite".red + " - A fiery JSON-based scaffolding tool for Node.js")
+
 updateNotifier({pkg: pkg}).notify();
 
 if(args.help){
   printHelp();
 }
 else if (args.version){
-  console.log("Ignite Verison:", pkg.version);
+  console.log("Ignite Verison:".yellow, pkg.version.green);
 }
 else if (args._[0] == "scaffold" && args._[1]) {
   var templateName = args._[1];
@@ -105,7 +108,7 @@ else if (args._[0] == "scaffold" && args._[1]) {
 }
 else if(args._[0] == "list"){
   files = fs.readdirSync(__dirname+"/templates");
-  console.log("Available Ignite Templates:");
+  console.log("Available Ignite Templates:".cyan);
   for(var file in files){
     console.log("",files[file].replace(".json", ""));
   }
@@ -114,7 +117,7 @@ else if(args._[0] == "describe" && args._[1]){
   describe(args._[1]);
 }
 else{
-  console.log("Incorrect usage: Try ignite --help for more information on how to use this tool.");
+  console.log("Incorrect usage:".red + " Try ignite --help for more information on how to use this tool.");
 }
 
 module.exports = {
