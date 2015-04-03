@@ -4,8 +4,6 @@
 
 var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
 
-// This is a hack to simply host the template files somewhere for now
-exports.startApiServer = startApiServer;
 exports.getApi = getApi;
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -20,30 +18,34 @@ var path = _interopRequire(require("path"));
 var fs = _interopRequire(require("fs"));
 
 var templatePath = path.join("" + __dirname + "/../templates/");
-function startApiServer() {
-  var app = express();
-  app.use("/user", express["static"]("$[process.cwd()}/templates"));
-  app.listen(process.env.PORT || 3000);
-}
 
-function getApi(user, name) {
+function getApi(name) {
   var data = {
     method: "GET",
-    url: "http://localhost:3000/" + user + "/" + name + ".json" };
-  if (user && name) {
-    startApiServer();
-    request(data).pipe(fs.createWriteStream("" + templatePath + "download-" + name + ".json"));
-    console.log("Downloaded");
-    process.exit(0);
+    url: "https://api.github.com/repos/bc-ignite/templates/contents/" + name + ".json",
+    headers: {
+      "User-Agent": "ignite-cli"
+    }
+  };
+  if (name) {
+    request(data, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        (function () {
+          var contentBuffer = new Buffer(JSON.parse(body).content, "base64");
+          var contentClean = contentBuffer.toString("utf8");
+          fs.writeFile("" + templatePath + "" + name + ".json", contentClean, function (err) {
+            if (err) {
+              fs.writeFile("" + templatePath + "" + name + ".json", contentClean);
+            }
+          });
+          console.log("" + name + " Saved!");
+        })();
+      } else {
+        logError(4, "Cannot connect to github services");
+      }
+    });
   } else {
-    if (!user) {
-      console.log("No Username");
-      process.exit(0);
-    }
-    if (!name) {
-      console.log("No project");
-      process.exit(0);
-    }
+    console.log("No project");
   }
 }
 
@@ -199,8 +201,8 @@ switch (args._[0]) {
   case "verison":
     console.log("Ignite Verison:", pkg.version);
     break;
-  case "pull":
-    getApi(args._[1], args._[2]);
+  case "install":
+    getApi(args._[1]);
     break;
   default:
     console.log("Incorrect usage: Try ignite help for more information on how to use this tool.");
