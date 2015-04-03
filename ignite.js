@@ -98,6 +98,7 @@ else if (args._[0] == "scaffold" && args._[1]) {
     templateObject = JSON.parse(fs.readFileSync(folderName+templateName+'.json', 'utf8'));
     getFilePaths(templateObject.structure, process.cwd());
     createStructure(files, createFiles);
+    describe(templateName);
   } catch (e){
     logError(1, "Unable to load File at: " +folderName+templateName+" !");
   }
