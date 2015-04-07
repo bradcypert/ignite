@@ -46,27 +46,33 @@ function getFilePaths(schema, pathTo) {
   }
 }
 
-function createStructure(files, cb) {
+function createStructure(files, cb, verbose) {
   files.filter(function (file) {
     if (!/(\.\w+$)/ig.test(file)) {
       return file;
     }
   }).map(function (file) {
+    if (verbose) {
+      console.log("Created: " + file);
+    }
     mkdirp(file, function (err) {
       if (err) {
         logError(2, "Directory Already Exists!");
       }
     });
   });
-  cb(files);
+  cb(files, verbose);
 }
 
-function createFiles(files) {
+function createFiles(files, verbose) {
   files.filter(function (file) {
     if (/(\.\w+$)/ig.test(file)) {
       return file;
     }
   }).map(function (file) {
+    if (verbose) {
+      console.log("Created: " + file);
+    }
     fs.writeFile(file, "", function (err) {
       if (err) {
         fs.writeFile(file, "");
@@ -75,7 +81,7 @@ function createFiles(files) {
   });
 }
 
-function scaffold(template, customDir) {
+function scaffold(template, customDir, verbose) {
   try {
     //  Default Template path
     var _templatePath = path.join("" + __dirname + "/../templates/");
@@ -101,7 +107,7 @@ function scaffold(template, customDir) {
     getFilePaths(templateObject.structure, process.cwd());
 
     // Create file structure from schema
-    createStructure(files, createFiles);
+    createStructure(files, createFiles, verbose);
 
     // If error reading templates
   } catch (e) {
@@ -137,7 +143,7 @@ updateNotifier({ pkg: pkg }).notify();
  */
 switch (args._[0]) {
   case "scaffold":
-    if (!args._[1]) logError(3, "Missing arguments");else scaffold(args._[1], args.d);
+    if (!args._[1]) logError(3, "Missing arguments");else scaffold(args._[1], args.d, args.v);
     break;
   case "list":
     listTemplates(args.d);
