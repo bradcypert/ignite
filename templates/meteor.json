@@ -1,6 +1,6 @@
 {
   "name": "Meteor Scaffold Template",
-  "desc": "Make sure to `meteor install iron:router`!",
+  "desc": "Make sure to `meteor add iron:router`!",
   "prompts":[
     {"name": "Please Input Project Name..."}
   ],
