@@ -2,8 +2,11 @@
     <img height="250" width="" src="https://cloud.githubusercontent.com/assets/1455979/6810939/5fdf4716-d232-11e4-850a-67399c70d29e.png">
 </p>
 
-Ignite
+Ignite [UNMAINTAINED]
 ======
+
+*Note: I hardly write JavaScript anymore than I have to these days and this tools was originally built with a JavaScript focus (despite offering support for Non-JS projects). For Clojure you can write your own profiles and scaffold them with Leinengen which is my primary language at this point, thus nullifying the need for Ignite. As such I haven't had time to work on this (or the need) in a long time. I think it's in a pretty good state, but I would love for someone to come and help maintain this project.*
+
 JSON based scaffolding system
 _____________________________
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
@@ -16,21 +19,21 @@ _____________________________
 
 
 
-###Installation
+### Installation
     npm install -g bc-ignite
 
-###Igniting your Project
+### Igniting your Project
     ignite scaffold {template-name}
 
-###Listing Install Templates
+### Listing Install Templates
     ignite list
 
-###Describing templates
+### Describing templates
     ignite describe {template-name}
 
-###Advanced usage can be found below
+### Advanced usage can be found below
 
-###Current Templates
+### Current Templates
 * **angular** - Minimal baseline, leaving developer to decide folder structure based on type (i.e, Controllers, Directives, Services) or component (e.g., Home, Search, Admin)
 
 * **express** - A seed structure for building robust express apps
@@ -57,12 +60,12 @@ _____________________________
 
 * **atom** - Atom.io scaffold for creating packages in CSON and coffeescript.
 
-###Want to Contribute a Template?
+### Want to Contribute a Template?
 Just fork the repo, add one, and submit a pull request.
 
 Why do that instead of generators? Because with generator based solutions like Yeoman and Slush, everyone and their grandma has created generators. The plan for Ignite is to have community standardized templates so there's not 50 different angular scaffolds to choose from.
 
-###Vision.
+### Vision.
 The plan for Ignite is simple. I want a solution that doesn't scaffold a project for you, but instead scaffolds the structure of a project. Why? Because you'll be able to do things like this...
 
     ignite scaffold rails
@@ -75,8 +78,8 @@ instead of...
 
 This allows you to scaffold only the pieces you need and hopefully will give you a solution more specific to your actual needs, instead of installing all the junk someone else thought they needed when they created the generator.
 
-##Advanced Usage
-###Using custom templates
+## Advanced Usage
+### Using custom templates
 Ignite can be used with user-created templates as well. All you have to do is specify a folder on your file system and use the -d flag when calling the command.
 
 Simply create the template in a directory
