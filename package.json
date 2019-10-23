@@ -49,7 +49,7 @@
     "gulp": "3.*",
     "gulp-jshint": "1.*",
     "gulp-mocha": "0.*",
-    "jshint-stylish": "0.*"
+    "jshint-stylish": "2.*"
   },
   "bin": {
     "ignite": "ignite.js"
