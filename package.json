@@ -48,7 +48,7 @@
     "must": ">= 0.11 < 1",
     "gulp": "3.*",
     "gulp-jshint": "1.*",
-    "gulp-mocha": "0.*",
+    "gulp-mocha": "8.*",
     "jshint-stylish": "0.*"
   },
   "bin": {
